@@ -22,7 +22,7 @@
 
 ### ‼️ Requirements:
 
-    - rename `.env.example` to just `.env` and add your environment variables
+- rename `.env.example` to just `.env` and add your environment variables
 
 ```bash
 $ # Create virtual environment
