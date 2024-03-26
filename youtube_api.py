@@ -7,7 +7,7 @@ def parse_youtube_response(response, excluded_channel_titles=None):
 
     :param response: The JSON response from the YouTube API.
     :param excluded_channel_titles: A list of channel titles to exclude.
-    :return: A list of dictionaries with video details.
+    :return: A list of dictionaries (array of objects) with video details.
     """
     videos = []
     for item in response.get('items', []):
