@@ -1,9 +1,12 @@
 from flask import Flask, request, jsonify
 from settings import Config
 from youtube_api import youtube_search
+from supabase_client import init_supabase 
 
 app = Flask(__name__)
 app.config.from_object(Config)
+
+init_supabase(app.config['SUPABASE_URL'], app.config['SUPABASE_KEY'])
 
 @app.route('/')
 def hello_world():
