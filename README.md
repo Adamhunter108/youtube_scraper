@@ -18,6 +18,8 @@
 - _for example_: to search for "Lil Wayne" but exclude his official channel with channelID:
   - `/api/search?query=lil%20wayne&exclude=LilWayneVEVO`
 
+**_note_**: this endpoint is protected with an authorization Bearer token
+
 ## Run Locally
 
 ### ‼️ Requirements:
