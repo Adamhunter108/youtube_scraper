@@ -1,24 +1,48 @@
 # youtube_scraper
 
-## About ℹ️
+## About
 
 - A Flask application that can search YouTube, exclude specific channels and saves data to a live PosgreSQL database.
 
 - The data includes:
+
   > Channel Title, Channel ID, Video ID, Description, Thumbnail URL, and Publish Time
+
+- The app is deployed continuously to Heroku and the PostgreSQL database is hosted on Supabase.
 
 ## Endpoint
 
-- `localhost:5000/api/search?query=<YOUR_SEARCH_QUERY>`
+**_⚠️ note_**: this endpoint is protected with an authorization Bearer token.
 
-- or optionally exclude specific channels by name:
+- The live base URL:
 
-  - `localhost:5000/api/search?query=<YOUR_SEARCH_QUERY>&exclude=ChannelNameToExclude,AnotherChannelToExclude`
+```
+https://flask-youtube-scraper-a55f990bea9f.herokuapp.com/
+```
 
-- _for example_: to search for "Lil Wayne" but exclude his official channel with channelID:
-  - `/api/search?query=lil%20wayne&exclude=LilWayneVEVO`
+- Local development URL:
 
-**_note_**: this endpoint is protected with an authorization Bearer token
+```
+localhost:5000/
+```
+
+### Search
+
+```python
+{{URL}}/api/search?query=<YOUR_SEARCH_QUERY>
+```
+
+Optionally exclude specific channels by name:
+
+```python
+{{URL}}/api/search?query=<YOUR_SEARCH_QUERY>&exclude=ChannelNameToExclude,AnotherChannelToExclude
+```
+
+**_for example_**: to search for "Lil Wayne" but exclude his official channel with his channel ID:
+
+```python
+{{URL}}/api/search?query=lil%20wayne&exclude=LilWayneVEVO
+```
 
 ## Run Locally
 
