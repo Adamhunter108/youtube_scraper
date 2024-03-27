@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, abort
 from settings import Config
 from youtube_api import youtube_search
 from supabase_client import init_supabase, insert_videos 
@@ -8,13 +8,22 @@ app.config.from_object(Config)
 
 init_supabase(app.config['SUPABASE_URL'], app.config['SUPABASE_KEY'])
 
-@app.route('/')
-def hello_world():
-    return "this is the youtube content scraper backend."
+# @app.route('/')
+# def hello_world():
+#     return "this is the youtube content scraper backend."
 
+def check_auth_token():
+    auth_header = request.headers.get('Authorization')
+    if auth_header:
+        token = auth_header.split(" ")[1]
+        if token == app.config['AUTH_TOKEN']:
+            return True
+    abort(403)
 
 @app.route('/api/search')
 def search():
+    check_auth_token()
+    
     query = request.args.get('query', '')
     exclude = request.args.get('exclude', '')
 
