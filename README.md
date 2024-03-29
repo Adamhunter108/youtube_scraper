@@ -2,7 +2,9 @@
 
 ## About
 
-- A Flask application that can search YouTube, exclude specific channels and saves data to a live PosgreSQL database.
+- The backend for a proof-of-concept internal tool to help find and monitor copyrighted content.
+
+- A Flask application that searches the YouTube Data API, can exclude specific channels from the search and saves data to a live PosgreSQL database.
 
 - The data includes:
 
