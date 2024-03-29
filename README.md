@@ -2,9 +2,11 @@
 
 ## About
 
-- The backend for a proof-of-concept internal tool to help find and monitor copyrighted content.
+- The backend for a proof-of-concept internal tool to find and monitor copyrighted content on YouTube.
 
-- A Flask application that searches the YouTube Data API, can exclude specific channels from the search and saves data to a live PosgreSQL database.
+  - [Frontend repository](https://github.com/Adamhunter108/youtube-scraper-poc-fe)
+
+- This is a Python Flask application that searches the YouTube Data API, filters out specific channels from the search and saves data to a live PosgreSQL database.
 
 - The data includes:
 
@@ -50,7 +52,7 @@ Optionally exclude specific channels by name:
 
 ### ‼️ Requirements:
 
-- rename `.env.example` to just `.env` and add your environment variables
+- rename `.env.example` to `.env` and add your environment variables
 
 ```bash
 $ # Create virtual environment
